@@ -10,10 +10,6 @@ const productFiltered = products.filter((item) =>
 item.categories.includes(category)
 );
 
-```
-return res.json(productFiltered);
-```
-
 }
 
 res.json(products);
