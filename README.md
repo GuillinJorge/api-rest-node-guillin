@@ -121,3 +121,56 @@ npm run dev
 - **Parámetros:**
 - `id` (path, requerido): ID del producto a eliminar.
 - **Respuesta:** 204 No Content
+- **NOTA** Requiere JWT
+
+### Actualizar un producto (PUT)
+
+- **PUT** `/products/:id`
+- **DESCRIPCIÓN** Reemplaza todo el recurso.
+- Body (JSON): igual que POST.
+- **NOTA** Requiere JWT
+
+### Actualizar parcialmente un producto (PATCH)
+
+- **PATCH** /products/:id
+- **DESCRIPCIÓN** Permite modificar solo algunos campos.
+- **NOTA** Requiere JWT
+
+### Autenticación (Auth)
+
+- **Registro de usuario**
+- POST /auth/register
+- Body:
+
+```json
+{
+  "email": "usuario@example.com",
+  "password": "123456"
+}
+```
+
+- **Login de usuario**
+- POST /auth/login
+- Body igual que registro
+
+Respuesta:
+```json
+{
+  "token": "JWT_GENERADO_AQUI"
+}
+```
+
+-**🧩 Middleware implementados**
+`mantenimiento.js`
+- Activa/desactiva modo mantenimiento de la API.
+`verify-token.js`
+- Verifica tokens JWT antes de acceder a rutas protegidas.
+`not-found.js`
+- Responde 404 para rutas inexistentes.
+
+-**Autor**
+- Jorge Guillin
+Docente | Desarrollador Web | Entusiasta del Backend
+
+-**Agradecimientos**
+- Al profe Jean Paul Ferreira por su tiempo y dedicación. Y por la calidad de sus videos para poder resolver esta iniciativa. 
